@@ -63,7 +63,7 @@ def video():
                     device = 'cuda' if GPU_on else 'cpu'
                     vad = 'True' if VAD_on else 'False'
                 with col4:
-                    language = ('自动识别', 'zh', 'en', 'ja', 'ko', 'it', 'de')  # language
+                    language = ('自动识别', 'zh', 'en', 'ja', 'ko', 'it', 'de', 'fr')  # language
                     lang = st.selectbox('选择视频语言', language, index=0,
                                         help="强制指定视频语言会提高识别准确度，但也可能会造成识别出错。")
         else:
@@ -101,7 +101,7 @@ def video():
                     model_name = st.text_input('模型调用名称', help='样例: chatglm3-6B', value='xxx')
 
             elif '译' not in translate_option:
-                language = ('中文', 'English', '日本語', '한국인', 'Italiano', 'Deutsch')
+                language = ('中文', 'English', '日本語', '한국인', 'Italiano', 'Deutsch', 'Français')
                 col3, col4, col5 = st.columns(3)
                 with col3:
                     language1 = st.selectbox('选择原始语言', language, index=1)
